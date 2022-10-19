@@ -1,0 +1,21 @@
+{
+  "name": "tailwind-course-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tw:build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "@check-light-or-dark/color": "^1.0.3",
+    "@fortawesome/fontawesome-free": "^6.2.0"
+  }
+}
