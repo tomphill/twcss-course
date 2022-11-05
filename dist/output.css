@@ -635,11 +635,6 @@ h6{
   border-radius: 0.5rem;
 }
 
-.btn-rose-900{
-  background-color: #881337;
-  color: white;
-}
-
 .btn-\[\#000\]{
   background-color: #000;
   color: white;
@@ -748,6 +743,11 @@ h6{
   margin-bottom: 1rem;
 }
 
+.mx-10{
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .ml-auto{
   margin-left: auto;
 }
@@ -786,6 +786,14 @@ h6{
 
 .-ml-\[8px\]{
   margin-left: -8px;
+}
+
+.ml-10{
+  margin-left: 2.5rem;
+}
+
+.-mr-10{
+  margin-right: -2.5rem;
 }
 
 .block{
@@ -870,6 +878,14 @@ h6{
 
 .w-4{
   width: 1rem;
+}
+
+.w-\[calc\(100\%-200px\)\]{
+  width: calc(100% - 200px);
+}
+
+.w-\[calc\(100\%-100px\)\]{
+  width: calc(100% - 100px);
 }
 
 .min-w-\[80\%\]{
@@ -1004,6 +1020,10 @@ h6{
 
 .overflow-x-auto{
   overflow-x: auto;
+}
+
+.scroll-smooth{
+  scroll-behavior: smooth;
 }
 
 .whitespace-nowrap{
@@ -1177,6 +1197,16 @@ h6{
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .pr-4{
@@ -1369,6 +1399,11 @@ h6{
 .hover\:text-zinc-200:hover{
   --tw-text-opacity: 1;
   color: rgb(228 228 231 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .hover\:shadow-lg:hover{
