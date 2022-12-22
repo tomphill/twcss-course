@@ -1294,6 +1294,10 @@ h6{
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+.outline-1{
+  outline-width: 1px;
+}
+
 .outline-pink-500{
   outline-color: #ec4899;
 }
@@ -1383,6 +1387,14 @@ h6{
 .hover\:shadow-black\/20:hover{
   --tw-shadow-color: rgb(0 0 0 / 0.2);
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.focus\:outline-2:focus{
+  outline-width: 2px;
+}
+
+.focus\:outline-solid:focus{
+  outline-style: solid;
 }
 
 .group:hover .group-hover\:block{
