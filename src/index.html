@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../dist/output.css" rel="stylesheet" />
-    <script defer src="./assets/fontawesome/js/solid.min.js"></script>
-    <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script src="./assets/fontawesome/js/solid.min.js"></script>
+    <script src="./assets/fontawesome/js/fontawesome.min.js"></script>
     <script>
       window.onload = () => {
         const mobileMenuIcon = document.getElementById("mobile-menu-button");
@@ -52,13 +52,13 @@
   <body class="dark">
     <main class="bg-zinc-200 dark:bg-zinc-900">
       <header class="text-zinc-200">
-        <div
+        <button
           id="dark-mode-toggle"
-          class="fixed top-24 right-0 z-10 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 p-2 text-3xl text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900"
+          class="fixed right-0 top-24 z-10 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 p-2 text-3xl text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900"
         >
           <i class="fa-solid fa-sun dark:hidden"></i>
           <i class="fa-solid fa-moon hidden dark:inline"></i>
-        </div>
+        </button>
         <nav
           class="sticky top-0 z-10 flex bg-gradient-to-r from-rose-500 to-pink-500"
         >
@@ -69,7 +69,7 @@
             </div>
           </div>
           <div class="my-auto ml-auto block cursor-pointer pr-4 md:hidden">
-            <div id="mobile-menu-button" class="group peer">
+            <button id="mobile-menu-button" class="group peer">
               <div
                 class="relative top-0 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:top-2 group-open:rotate-45"
               ></div>
@@ -79,9 +79,9 @@
               <div
                 class="relative top-0 mt-1 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:-top-2 group-open:-rotate-45"
               ></div>
-            </div>
+            </button>
             <div
-              class="absolute top-[62px] left-0 hidden w-full bg-gradient-to-r from-rose-500 to-pink-500 peer-open:block"
+              class="absolute left-0 top-[62px] hidden w-full bg-gradient-to-r from-rose-500 to-pink-500 peer-open:block"
             >
               <div
                 class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
@@ -128,7 +128,7 @@
             <div class="menu-item group">
               <span>Tickets</span>
               <div
-                class="absolute top-full right-0 hidden whitespace-nowrap rounded-b-md bg-pink-500 text-right group-hover:block"
+                class="absolute right-0 top-full hidden whitespace-nowrap rounded-b-md bg-pink-500 text-right group-hover:block"
               >
                 <div
                   class="cursor-pointer p-4 font-bold text-pink-200 transition-colors ease-in-out hover:bg-white/5 hover:text-zinc-200"
@@ -152,11 +152,11 @@
           class="flex h-[calc(100vh-200px)] min-h-[400px] flex-col items-center justify-center bg-cover bg-fixed bg-center"
         >
           <div
-            class="rounded-xl bg-white/30 py-2 px-4 text-center backdrop-blur-md"
+            class="rounded-xl bg-white/30 px-4 py-2 text-center backdrop-blur-md"
           >
             <div class="relative">
               <img src="./assets/images/logo.png" width="175" />
-              <div class="mt-[-70px] mb-5 flex items-center justify-center">
+              <div class="mb-5 mt-[-70px] flex items-center justify-center">
                 <div
                   class="flex h-14 w-14 items-center justify-center gap-1 rounded-full bg-pink-500"
                 >
@@ -193,7 +193,7 @@
             />
             <button
               type="submit"
-              class="cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg hover:shadow-black/20"
+              class="cursor-pointer rounded-sm bg-pink-500 px-4 py-2 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg hover:shadow-black/20"
             >
               Subscribe
             </button>
@@ -203,7 +203,12 @@
       <div
         class="mx-auto mt-20 max-w-screen-lg text-zinc-900 dark:text-zinc-200"
       >
-        <h2>Headliners</h2>
+        <h2>
+          <span
+            class="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent"
+            >Headliners</span
+          >
+        </h2>
         <p>
           Experience the sonic delight from these made-up artists across 7 days
           that music fans are calling “one of the many gigs that will happen
@@ -233,16 +238,16 @@
                 style="background-image: url('./assets/images/band2.jpg')"
                 class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
               ></div>
-              <h5 class="mt-2">Corduroy Gary</h5>
-              <h6>1st July 9pm - Main Stage</h6>
+              <h5 class="mt-2">Dave's showing off again</h5>
+              <h6>2nd July 9pm - Main Stage</h6>
             </div>
             <div class="min-w-[80%] md:min-w-[40%]">
               <div
                 style="background-image: url('./assets/images/band3.jpg')"
                 class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
               ></div>
-              <h5 class="mt-2">Corduroy Gary</h5>
-              <h6>1st July 9pm - Main Stage</h6>
+              <h5 class="mt-2">Sarah can't have dairy</h5>
+              <h6>3rd July 9pm - Main Stage</h6>
             </div>
             <div class="min-w-[80%] md:min-w-[40%]">
               <div
@@ -291,17 +296,17 @@
           artists
         </p>
         <div
-          class="relative mt-5 rounded-lg bg-zinc-800 py-4 px-2 text-zinc-200"
+          class="relative mt-5 rounded-lg bg-zinc-800 px-2 py-4 text-zinc-200"
         >
           <div
-            class="absolute top-0 left-1/2 -ml-[8px] h-full w-4 rounded-full bg-gradient-to-b from-sky-900 via-cyan-900 to-teal-900"
+            class="absolute left-1/2 top-0 -ml-[8px] h-full w-4 rounded-full bg-gradient-to-b from-sky-900 via-cyan-900 to-teal-900"
           >
             <div class="sticky top-1/2">
-              <div class="relative h-4 w-4">
+              <div class="relative size-4">
                 <div
-                  class="absolute h-4 w-4 animate-ping rounded-full bg-pink-500 opacity-75"
+                  class="absolute size-4 animate-ping rounded-full bg-pink-500 opacity-75"
                 ></div>
-                <div class="relative h-4 w-4 rounded-full bg-rose-500"></div>
+                <div class="relative size-4 rounded-full bg-rose-500"></div>
               </div>
             </div>
           </div>
@@ -344,14 +349,14 @@
           </thead>
           <tbody>
             <tr>
-              <td class="border border-zinc-500 py-2 px-3">
+              <td class="border border-zinc-500 px-3 py-2">
                 Single day ticket
               </td>
-              <td class="border border-zinc-500 py-2 px-3">£30</td>
+              <td class="border border-zinc-500 px-3 py-2">£30</td>
             </tr>
             <tr>
-              <td class="border border-zinc-500 py-2 px-3">7 day ticket</td>
-              <td class="border border-zinc-500 py-2 px-3">£100</td>
+              <td class="border border-zinc-500 px-3 py-2">7 day ticket</td>
+              <td class="border border-zinc-500 px-3 py-2">£100</td>
             </tr>
           </tbody>
           <caption class="caption-bottom">
