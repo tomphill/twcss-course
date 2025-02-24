@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../dist/output.css" rel="stylesheet" />
+    <link href="/dist/output.css" rel="stylesheet" />
     <script src="./assets/fontawesome/js/solid.min.js"></script>
     <script src="./assets/fontawesome/js/fontawesome.min.js"></script>
     <script>
@@ -56,8 +56,12 @@
           id="dark-mode-toggle"
           class="fixed right-0 top-24 z-10 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 p-2 text-3xl text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900"
         >
-          <i class="fa-solid fa-sun dark:hidden"></i>
-          <i class="fa-solid fa-moon hidden dark:inline"></i>
+          <span class="dark:hidden">
+            <i id="sun-icon" class="fa-solid fa-sun"></i>
+          </span>
+          <span class="hidden dark:inline">
+            <i id="moon-icon" class="fa-solid fa-moon"></i>
+          </span>
         </button>
         <nav
           class="sticky top-0 z-10 flex bg-gradient-to-r from-rose-500 to-pink-500"
@@ -161,19 +165,19 @@
                   class="flex h-14 w-14 items-center justify-center gap-1 rounded-full bg-pink-500"
                 >
                   <div
-                    class="h-2 w-1 animate-wavey rounded-full bg-pink-300"
+                    class="animate-wavey h-2 w-1 rounded-full bg-pink-300"
                   ></div>
                   <div
-                    class="h-3 w-1 animate-wavey rounded-full bg-pink-200 animation-delay-200"
+                    class="animate-wavey animation-delay-200 h-3 w-1 rounded-full bg-pink-200"
                   ></div>
                   <div
-                    class="h-4 w-1 animate-wavey rounded-full bg-pink-100 animation-delay-[150ms]"
+                    class="animate-wavey animation-delay-[150ms] h-4 w-1 rounded-full bg-pink-100"
                   ></div>
                   <div
-                    class="h-3 w-1 animate-wavey rounded-full bg-pink-200 animation-delay-300"
+                    class="animate-wavey animation-delay-300 h-3 w-1 rounded-full bg-pink-200"
                   ></div>
                   <div
-                    class="h-2 w-1 animate-wavey rounded-full bg-pink-300 animation-delay-[75ms]"
+                    class="animate-wavey animation-delay-[75ms] h-2 w-1 rounded-full bg-pink-300"
                   ></div>
                 </div>
               </div>
@@ -189,7 +193,7 @@
             <input
               type="email"
               placeholder="Email"
-              class="rounded-sm border border-white/40 bg-white/30 p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-1 outline-pink-500 backdrop-blur-md focus:outline-2 focus:outline-solid"
+              class="focus:outline-solid rounded-sm border border-white/40 bg-white/30 p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-1 outline-pink-500 backdrop-blur-md focus:outline-2"
             />
             <button
               type="submit"
@@ -302,11 +306,11 @@
             class="absolute left-1/2 top-0 -ml-[8px] h-full w-4 rounded-full bg-gradient-to-b from-sky-900 via-cyan-900 to-teal-900"
           >
             <div class="sticky top-1/2">
-              <div class="relative size-4">
+              <div class="size-4 relative">
                 <div
-                  class="absolute size-4 animate-ping rounded-full bg-pink-500 opacity-75"
+                  class="size-4 absolute animate-ping rounded-full bg-pink-500 opacity-75"
                 ></div>
-                <div class="relative size-4 rounded-full bg-rose-500"></div>
+                <div class="size-4 relative rounded-full bg-rose-500"></div>
               </div>
             </div>
           </div>
@@ -364,11 +368,6 @@
           </caption>
         </table>
       </div>
-      <section
-        class="rounded-bltr-[30px] flex flex-col items-center justify-center bg-gradient-to-br from-cyan-500 to-rose-500 px-10 py-40"
-      >
-        <button class="btn btn-[#000]">Some button</button>
-      </section>
     </main>
   </body>
 </html>
