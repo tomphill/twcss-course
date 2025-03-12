@@ -57,11 +57,15 @@
           class="fixed right-0 top-24 z-10 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 p-2 text-3xl text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900"
         >
           <span class="dark:hidden">
-            <i id="sun-icon" class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-sun"></i>
           </span>
           <span class="hidden dark:inline">
-            <i id="moon-icon" class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-moon"></i>
           </span>
+          <!--
+            <i class="fa-solid fa-sun dark:!hidden"></i>
+            <i class="fa-solid fa-moon !hidden dark:!inline"></i>
+          -->
         </button>
         <nav
           class="sticky top-0 z-10 flex bg-gradient-to-r from-rose-500 to-pink-500"
@@ -168,16 +172,16 @@
                     class="animate-wavey h-2 w-1 rounded-full bg-pink-300"
                   ></div>
                   <div
-                    class="animate-wavey animation-delay-200 h-3 w-1 rounded-full bg-pink-200"
+                    class="animate-wavey animation-delay-100 h-3 w-1 rounded-full bg-pink-200"
                   ></div>
                   <div
-                    class="animate-wavey animation-delay-[150ms] h-4 w-1 rounded-full bg-pink-100"
+                    class="animate-wavey animation-delay-150 h-4 w-1 rounded-full bg-pink-100"
                   ></div>
                   <div
                     class="animate-wavey animation-delay-300 h-3 w-1 rounded-full bg-pink-200"
                   ></div>
                   <div
-                    class="animate-wavey animation-delay-[75ms] h-2 w-1 rounded-full bg-pink-300"
+                    class="animate-wavey animation-delay-75 h-2 w-1 rounded-full bg-pink-300"
                   ></div>
                 </div>
               </div>
@@ -204,9 +208,7 @@
           </form>
         </div>
       </header>
-      <div
-        class="mx-auto mt-20 max-w-screen-lg text-zinc-900 dark:text-zinc-200"
-      >
+      <div class="container mx-auto mt-20 text-zinc-900 dark:text-zinc-200">
         <h2>
           <span
             class="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent"
@@ -219,12 +221,12 @@
           this year”
         </p>
         <div class="flex">
-          <div
+          <button
             id="previous"
             class="relative -top-8 flex cursor-pointer items-center justify-center p-2 text-5xl"
           >
             <i class="fas fa-angle-left"></i>
-          </div>
+          </button>
           <div
             id="carousel"
             class="mt-4 flex w-full flex-1 snap-x gap-4 overflow-x-auto scroll-smooth pb-5"
@@ -286,12 +288,12 @@
               <h6>1st July 9pm - Main Stage</h6>
             </div>
           </div>
-          <div
+          <button
             id="next"
             class="relative -top-8 flex cursor-pointer items-center justify-center p-2 text-5xl"
           >
             <i class="fas fa-angle-right"></i>
-          </div>
+          </button>
         </div>
 
         <h2 class="mt-20">Lineup</h2>
@@ -345,28 +347,95 @@
             </div>
           </div>
         </div>
-        <h2 class="mt-20">Tickets</h2>
-        <table class="mt-5 table w-full border-collapse border border-zinc-500">
-          <thead class="text-lg font-bold">
-            <td class="border border-zinc-500 p-3">Tickets</td>
-            <td class="border border-zinc-500 p-3">Price</td>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border border-zinc-500 px-3 py-2">
-                Single day ticket
-              </td>
-              <td class="border border-zinc-500 px-3 py-2">£30</td>
-            </tr>
-            <tr>
-              <td class="border border-zinc-500 px-3 py-2">7 day ticket</td>
-              <td class="border border-zinc-500 px-3 py-2">£100</td>
-            </tr>
-          </tbody>
-          <caption class="caption-bottom">
-            Once they're gone, they're gone!
-          </caption>
-        </table>
+        <div class="@container">
+          <h2 class="mt-20">Tickets</h2>
+          <table
+            class="mt-5 table w-full border-collapse border border-zinc-500"
+          >
+            <thead class="text-lg font-bold">
+              <td class="border border-zinc-500 p-3">Tickets</td>
+              <td class="border border-zinc-500 p-3">Price</td>
+              <td class="w-[150px]"></td>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-zinc-500 px-3 py-2">
+                  Single day ticket
+                </td>
+                <td class="border border-zinc-500 px-3 py-2">£30</td>
+                <td class="@max-xl:hidden border border-zinc-500 px-3 py-2">
+                  <button
+                    class="cursor-pointer rounded-md bg-pink-600 p-2 text-white"
+                  >
+                    Buy Now
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-zinc-500 px-3 py-2">7 day ticket</td>
+                <td class="border border-zinc-500 px-3 py-2">£100</td>
+                <td class="border border-zinc-500 px-3 py-2">
+                  <button
+                    class="cursor-pointer rounded-md bg-pink-600 p-2 text-white"
+                  >
+                    Buy Now
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <caption class="caption-bottom">
+              Once they're gone, they're gone!
+            </caption>
+          </table>
+        </div>
+        <div class="grid grid-cols-[1fr_400px]">
+          <div>col 1</div>
+          <div>
+            <div class="@container">
+              <h2 class="mt-20">Tickets</h2>
+              <table
+                class="mt-5 table w-full border-collapse border border-zinc-500"
+              >
+                <thead class="text-lg font-bold">
+                  <td class="border border-zinc-500 p-3">Tickets</td>
+                  <td class="border border-zinc-500 p-3">Price</td>
+                  <td class="w-[150px]"></td>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border border-zinc-500 px-3 py-2">
+                      Single day ticket
+                    </td>
+                    <td class="border border-zinc-500 px-3 py-2">£30</td>
+                    <td class="@max-xl:hidden border border-zinc-500 px-3 py-2">
+                      <button
+                        class="cursor-pointer rounded-md bg-pink-600 p-2 text-white"
+                      >
+                        Buy Now
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-zinc-500 px-3 py-2">
+                      7 day ticket
+                    </td>
+                    <td class="border border-zinc-500 px-3 py-2">£100</td>
+                    <td class="border border-zinc-500 px-3 py-2">
+                      <button
+                        class="cursor-pointer rounded-md bg-pink-600 p-2 text-white"
+                      >
+                        Buy Now
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+                <caption class="caption-bottom">
+                  Once they're gone, they're gone!
+                </caption>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>

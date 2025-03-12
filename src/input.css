@@ -16,6 +16,8 @@
   --animation-delay-800: 800ms;
   --animation-delay-900: 900ms;
   --animation-delay-1000: 1000ms;
+  --animation-delay-sm: 100ms;
+  --animation-delay-md: 200ms;
 
   @keyframes wavey {
     0%,
@@ -30,6 +32,7 @@
 
 @utility animation-delay-* {
   animation-delay: --value(--animation-delay- *);
+  animation-delay: calc(--value(integer) * 1ms);
   animation-delay: --value([ * ]);
 }
 
@@ -76,3 +79,16 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.container {
+  width: 100%;
+  @media (width >= 40rem /* 640px */) {
+    max-width: 40rem /* 640px */;
+  }
+  @media (width >= 48rem /* 768px */) {
+    max-width: 48rem /* 768px */;
+  }
+  @media (width >= 64rem /* 1024px */) {
+    max-width: 64rem /* 1024px */;
+  }
+}

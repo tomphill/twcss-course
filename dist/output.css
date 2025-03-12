@@ -15,6 +15,7 @@
     --color-pink-200: oklch(0.899 0.061 343.231);
     --color-pink-300: oklch(0.823 0.12 346.018);
     --color-pink-500: oklch(0.656 0.241 354.308);
+    --color-pink-600: oklch(0.592 0.249 0.584);
     --color-rose-500: oklch(0.645 0.246 16.439);
     --color-zinc-200: oklch(0.92 0.004 286.32);
     --color-zinc-400: oklch(0.705 0.015 286.067);
@@ -24,7 +25,6 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --breakpoint-lg: 64rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
@@ -65,7 +65,7 @@
     );
     --font-quicksand: "Quicksand", serif;
     --animate-wavey: wavey 1000ms linear infinite;
-    --animation-delay-200: 200ms;
+    --animation-delay-100: 100ms;
     --animation-delay-300: 300ms;
   }
 }
@@ -211,6 +211,9 @@
   }
 }
 @layer utilities {
+  .\@container {
+    container-type: inline-size;
+  }
   .sr-only {
     position: absolute;
     width: 1px;
@@ -264,8 +267,23 @@
   .z-1 {
     z-index: 1;
   }
-  .z-10 {
-    z-index: 10;
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
   }
   .mx-auto {
     margin-inline: auto;
@@ -305,6 +323,9 @@
   }
   .ml-auto {
     margin-left: auto;
+  }
+  .\!hidden {
+    display: none !important;
   }
   .block {
     display: block;
@@ -370,11 +391,11 @@
   .w-14 {
     width: calc(var(--spacing) * 14);
   }
+  .w-\[150px\] {
+    width: 150px;
+  }
   .w-full {
     width: 100%;
-  }
-  .max-w-screen-lg {
-    max-width: var(--breakpoint-lg);
   }
   .min-w-\[80\%\] {
     min-width: 80%;
@@ -424,6 +445,9 @@
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .grid-cols-\[1fr_400px\] {
+    grid-template-columns: 1fr 400px;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -459,6 +483,9 @@
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
   }
   .rounded-sm {
     border-radius: var(--radius-sm);
@@ -499,6 +526,9 @@
   }
   .bg-pink-500 {
     background-color: var(--color-pink-500);
+  }
+  .bg-pink-600 {
+    background-color: var(--color-pink-600);
   }
   .bg-rose-500 {
     background-color: var(--color-rose-500);
@@ -635,6 +665,9 @@
   .text-transparent {
     color: transparent;
   }
+  .text-white {
+    color: var(--color-white);
+  }
   .text-zinc-200 {
     color: var(--color-zinc-200);
   }
@@ -694,17 +727,19 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
-  .animation-delay-200 {
-    animation-delay: var(--animation-delay-200);
+  .animation-delay-100 {
+    animation-delay: var(--animation-delay-100);
+    animation-delay: calc(100 * 1ms);
   }
   .animation-delay-300 {
     animation-delay: var(--animation-delay-300);
+    animation-delay: calc(300 * 1ms);
   }
-  .animation-delay-\[75ms\] {
-    animation-delay: 75ms;
+  .animation-delay-75 {
+    animation-delay: calc(75 * 1ms);
   }
-  .animation-delay-\[150ms\] {
-    animation-delay: 150ms;
+  .animation-delay-150 {
+    animation-delay: calc(150 * 1ms);
   }
   .group-hover\:block {
     &:is(:where(.group):hover *) {
@@ -781,6 +816,21 @@
   .md\:min-w-\[40\%\] {
     @media (width >= 48rem) {
       min-width: 40%;
+    }
+  }
+  .\@max-xl\:hidden {
+    @container (width < 36rem) {
+      display: none;
+    }
+  }
+  .dark\:\!hidden {
+    &:where(.dark, .dark *) {
+      display: none !important;
+    }
+  }
+  .dark\:\!inline {
+    &:where(.dark, .dark *) {
+      display: inline !important;
     }
   }
   .dark\:hidden {
@@ -917,6 +967,18 @@
         color: var(--color-zinc-200);
       }
     }
+  }
+}
+.container {
+  width: 100%;
+  @media (width >= 40rem ) {
+    max-width: 40rem;
+  }
+  @media (width >= 48rem ) {
+    max-width: 48rem;
+  }
+  @media (width >= 64rem ) {
+    max-width: 64rem;
   }
 }
 @keyframes ping {
